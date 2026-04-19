@@ -1,8 +1,8 @@
 {
   "id": "7a3bf371-b909-4a67-a770-80b53cad1961",
   "revision": 0,
-  "last_node_id": 3,
-  "last_link_id": 2,
+  "last_node_id": 6,
+  "last_link_id": 4,
   "nodes": [
     {
       "id": 3,
@@ -47,15 +47,15 @@
       ]
     },
     {
-      "id": 2,
-      "type": "LoadImage",
+      "id": 4,
+      "type": "LoadImageWithFilename",
       "pos": [
-        -1010.1963798705357,
-        380.0686689554376
+        -996.0806032291703,
+        308.89034772431614
       ],
       "size": [
-        282.798828125,
-        314
+        275.03671875,
+        334.0000000000001
       ],
       "flags": {},
       "order": 0,
@@ -63,28 +63,31 @@
       "inputs": [],
       "outputs": [
         {
-          "name": "IMAGE",
+          "name": "image",
           "type": "IMAGE",
           "links": [
-            2
+            3
           ]
         },
         {
-          "name": "MASK",
+          "name": "mask",
           "type": "MASK",
           "links": null
+        },
+        {
+          "name": "filename",
+          "type": "STRING",
+          "links": [
+            4
+          ]
         }
       ],
       "properties": {
-        "Node name for S&R": "LoadImage",
         "ue_properties": {
-          "widget_ue_connectable": {
-            "image": true,
-            "upload": true
-          },
-          "version": "7.8",
+          "widget_ue_connectable": {},
           "input_ue_unconnectable": {}
-        }
+        },
+        "Node name for S&R": "LoadImageWithFilename"
       },
       "widgets_values": [
         "z-image-turbo_00076_.png",
@@ -109,7 +112,16 @@
         {
           "name": "image",
           "type": "IMAGE",
-          "link": 2
+          "link": 3
+        },
+        {
+          "name": "filename",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "filename"
+          },
+          "link": 4
         }
       ],
       "outputs": [
@@ -154,22 +166,30 @@
       "STRING"
     ],
     [
-      2,
-      2,
+      3,
+      4,
       0,
       1,
       0,
       "IMAGE"
+    ],
+    [
+      4,
+      4,
+      2,
+      1,
+      1,
+      "STRING"
     ]
   ],
   "groups": [],
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.6434897855976899,
+      "scale": 0.7078387641574597,
       "offset": [
-        2139.081166421577,
-        490.2005112470498
+        2084.4075883095525,
+        501.57312003549123
       ]
     },
     "ue_links": [],
