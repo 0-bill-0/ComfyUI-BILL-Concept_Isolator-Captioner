@@ -62,7 +62,13 @@
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "properties": {},
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
       "widgets_values": [
         "put the path to your images.  set incremental_image mode, index at 0."
       ],
@@ -85,7 +91,13 @@
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "properties": {},
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
       "widgets_values": [
         "You can change the path below to put the text files in the same folder as the photos.  or leave as is.  i'm not your boss\n"
       ],
@@ -108,12 +120,69 @@
       "mode": 0,
       "inputs": [],
       "outputs": [],
-      "properties": {},
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
       "widgets_values": [
         "Set the batch number to match the number of photos in your folder.\n\nNot sure about the speed right now, I'm using a very large language model.  Try using your favorite it should work just fine."
       ],
       "color": "#432",
       "bgcolor": "#653"
+    },
+    {
+      "id": 11,
+      "type": "Load Image Batch",
+      "pos": [
+        -1036.6266038052972,
+        38.652462554090846
+      ],
+      "size": [
+        299.708984375,
+        270
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            13
+          ]
+        },
+        {
+          "name": "filename_text",
+          "type": "STRING",
+          "links": [
+            14
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Load Image Batch",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
+      },
+      "widgets_values": [
+        "incremental_image",
+        0,
+        "randomize",
+        0,
+        "Batch 001",
+        "",
+        "*",
+        "false",
+        "true"
+      ]
     },
     {
       "id": 10,
@@ -155,68 +224,19 @@
         }
       ],
       "properties": {
+        "Node name for S&R": "BillLoRACaptionNode",
         "ue_properties": {
           "widget_ue_connectable": {},
-          "input_ue_unconnectable": {}
-        },
-        "Node name for S&R": "BillLoRACaptionNode"
+          "input_ue_unconnectable": {},
+          "version": "7.8"
+        }
       },
       "widgets_values": [
-        "bakllava:latest",
+        "nexusriot/gemma-4-abliterated:31b",
         "man with grey hair and blue eyes",
         "Bill",
         "image",
         "comfyui/output/captions"
-      ]
-    },
-    {
-      "id": 11,
-      "type": "Load Image Batch",
-      "pos": [
-        -1036.6266038052972,
-        38.652462554090846
-      ],
-      "size": [
-        299.708984375,
-        270
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "links": [
-            13
-          ]
-        },
-        {
-          "name": "filename_text",
-          "type": "STRING",
-          "links": [
-            14
-          ]
-        }
-      ],
-      "properties": {
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "input_ue_unconnectable": {}
-        },
-        "Node name for S&R": "Load Image Batch"
-      },
-      "widgets_values": [
-        "incremental_image",
-        0,
-        "randomize",
-        0,
-        "Batch 001",
-        "",
-        "*",
-        "false",
-        "true"
       ]
     }
   ],
@@ -250,10 +270,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.7786226405732065,
+      "scale": 1.253979548869555,
       "offset": [
-        1421.172126836634,
-        658.0545421783899
+        1107.6688561059439,
+        272.78786024922874
       ]
     },
     "ue_links": [],

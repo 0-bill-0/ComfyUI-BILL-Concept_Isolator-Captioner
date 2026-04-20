@@ -143,7 +143,7 @@
         }
       },
       "widgets_values": [
-        "bakllava:latest",
+        "gemma4:e4b",
         "man with grey hair and blue eyes",
         "Bill",
         "image",
@@ -181,10 +181,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.9421333950935784,
+      "scale": 0.7786226405732061,
       "offset": [
-        1206.1135523098499,
-        423.44591386119987
+        1503.8671850729752,
+        372.4816323382942
       ]
     },
     "ue_links": [],
