@@ -35,4 +35,4 @@ To ensure maximum subject fidelity, the node employs a logic gate known as **Con
 | :--- | :--- | :--- |
 | **VRAM** | 16GB | 24GB - 32GB |
 | **Model** | LLaVA | Gemma 4 |
-| **OS** | Windows/Linux | Linux (Ubuntu 22.04) |
+| **OS** | Windows/Linux | Linux |
