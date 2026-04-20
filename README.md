@@ -26,7 +26,7 @@ To ensure maximum subject fidelity, the node employs a logic gate known as **Con
 
 ### Node Integration
 1. Clone the repository to the ComfyUI custom nodes directory:
-   `git clone https://github.com/YOUR_USERNAME/ComfyUI-BILL-Concept_Isolator-Captioner.git`
+   `git clone https://github.com/0-bill-0/ComfyUI-BILL-Concept_Isolator-Captioner.git`
 2. Install required Python dependencies:
    `pip install -r requirements.txt`
 
