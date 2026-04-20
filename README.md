@@ -33,6 +33,6 @@ To ensure maximum subject fidelity, the node employs a logic gate known as **Con
 ## Hardware Requirements
 | Component | Minimum | Recommended |
 | :--- | :--- | :--- |
-| **VRAM** | 16GB | 24GB - 32GB |
-| **Model** | LLaVA | Gemma 4 |
-| **OS** | Windows/Linux | Linux |
+| **VRAM** | potato | 24GB - 32GB |
+| **Model** | potato | Gemma 4 |
+| **OS** | potato | Linux |
