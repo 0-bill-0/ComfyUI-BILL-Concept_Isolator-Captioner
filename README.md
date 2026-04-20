@@ -1,74 +1,38 @@
-\# 🚀 BILL-Concept_Isolator-Captioner (Gemma 4 Edition)
+# Bill's LoRA Detail Captioner (Gemma 4 Edition)
 
+## Overview
+The **Bill's LoRA Detail Captioner** is a specialized ComfyUI node designed to automate the creation of high-precision captioning datasets. By integrating multimodal LLMs—specifically the Gemma 4 architecture—it bridges the gap between raw image data and the descriptive metadata required for high-quality LoRA (Low-Rank Adaptation) training.
 
+## Technical Approach: Concept Isolation
+To ensure maximum subject fidelity, the node employs a logic gate known as **Concept Isolation**. This process prevents the model from overfitting by decoupling the subject's unique identifiers from the general scene description.
 
-A professional-grade image captioning node for ComfyUI, designed to generate high-fidelity datasets for LoRA training using next-generation multimodal LLMs.
+### The Workflow Logic:
+*   **Input Filtering:** The user specifies the subject's inherent traits (Excluded Details).
+*   **Constraint Application:** The LLM is prompted to describe the image while treating the excluded details as "invisible" to the general description.
+*   **Token Injection:** The identified unique traits are condensed into a single **Trigger Word**, ensuring the LoRA associates the trigger token with the visual identity.
 
+## System Capabilities
+*   **High-Fidelity Descriptive Analysis:** Focuses on lighting, composition, and texture rather than simple object labeling.
+*   **Single-Pass Inference:** Reduces token drift by utilizing a single, complex prompt pass rather than iterative refinement.
+*   **Integrated File Management:** Streamlined `.txt` export mapped to image filenames for immediate use in training scripts (e.g., Kohya_ss).
+*   **Hardware Target:** Optimized for high-VRAM environments (24GB+), enabling the use of larger, more reasoned models.
 
+## Installation Guide
 
-\## 🧠 The Power of Gemma 4
+### Backend Setup
+1. Install the **Ollama** runtime environment.
+2. Deploy the vision model via CLI:
+   `ollama run gemma4`
 
-This node is optimized for \*\*Gemma 4\*\* (and similar high-parameter Vision models like Llama 3.2 Vision). Unlike older models, Gemma 4 possesses superior reasoning capabilities, allowing it to follow complex constraints while maintaining a cinematic, verbose vocabulary.
+### Node Integration
+1. Clone the repository to the ComfyUI custom nodes directory:
+   `git clone https://github.com/YOUR_USERNAME/ComfyUI-BillLoRA-Captioner.git`
+2. Install required Python dependencies:
+   `pip install -r requirements.txt`
 
-
-
-\## 🌟 The Logic: Concept Isolation
-
-To train a high-quality LoRA, you must isolate the subject's unique identity from the scene. This node uses \*\*Concept Isolation\*\*:
-
-
-
-1\. \*\*Identify:\*\* You provide the "Excluded Details" (e.g., "man with grey hair and blue eyes").
-
-2\. \*\*Isolate:\*\* The AI is forbidden from describing those specific traits.
-
-3\. \*\*Trigger:\*\* The AI replaces those traits with a unique \*\*Trigger Word\*\* (e.g., "Bill").
-
-
-
-\*\*Result:\*\* The LoRA learns that "grey hair and blue eyes" = `Bill`, rather than thinking they are just general features of the image.
-
-
-
-\## ✨ Key Features
-
-\- \*\*Cinematic Analysis:\*\* Generates high-fidelity descriptions focusing on chromatic hues, textures, and volumetric lighting.
-
-\- \*\*Single-Pass Logic:\*\* Leverages the intelligence of Gemma 4 to observe and filter the image in one pass, eliminating the "invention" problems found in multi-pass systems.
-
-\- \*\*Auto-Save Workflow:\*\* Automatically saves captions as `.txt` files matched to image filenames for instant training.
-
-\- \*\*VRAM Optimized:\*\* Purpose-built for users with \*\*24GB - 32GB VRAM\*\* to run heavy, high-intelligence models.
-
-
-
-\## 🛠️ Installation
-
-
-
-1\. \*\*Install Ollama:\*\* Download \[Ollama](https://ollama.ai/).
-
-2\. \*\*Pull a Vision Model:\*\* Run the following in your terminal:
-
-&#x20;  - `ollama run gemma4` (Recommended)
-
-&#x20;  - `ollama run llava` (Alternative)
-
-3\. \*\*Install Node:\*\*
-
-&#x20;  - Clone this repository into your `ComfyUI/custom\_nodes/` folder:
-
-&#x20;    ```bash
-
-&#x20;    git clone https://github.com/YOUR\_USERNAME/ComfyUI-BILL-Concept_Isolator-Captioner.git
-
-&#x20;    ```
-
-4\. \*\*Install Dependencies:\*\*
-
-&#x20;  ```bash
-
-&#x20;  pip install -r requirements.txt
-
-
-
+## Hardware Requirements
+| Component | Minimum | Recommended |
+| :--- | :--- | :--- |
+| **VRAM** | 16GB | 24GB - 32GB |
+| **Model** | LLaVA | Gemma 4 |
+| **OS** | Windows/Linux | Linux (Ubuntu 22.04) |
