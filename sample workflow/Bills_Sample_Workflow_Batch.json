@@ -1,0 +1,268 @@
+{
+  "id": "14d7009c-51f9-4b50-b475-93b365d20d66",
+  "revision": 0,
+  "last_node_id": 11,
+  "last_link_id": 14,
+  "nodes": [
+    {
+      "id": 3,
+      "type": "PreviewAny",
+      "pos": [
+        -79.30869364189502,
+        330.8573400660389
+      ],
+      "size": [
+        491.7589810922468,
+        382.143875906381
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewAny",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.8",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "id": 7,
+      "type": "Note",
+      "pos": [
+        -1017.6348266985926,
+        -239.97090121206293
+      ],
+      "size": [
+        259.30019124702824,
+        137.1942413951358
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "put the path to your images.  set incremental_image mode, index at 0."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 8,
+      "type": "Note",
+      "pos": [
+        -592.1892917367668,
+        39.85822384530393
+      ],
+      "size": [
+        433.86444167466493,
+        155.6155944553388
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "You can change the path below to put the text files in the same folder as the photos.  or leave as is.  i'm not your boss\n"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 9,
+      "type": "Note",
+      "pos": [
+        -382.5367497658901,
+        -305.76144785564446
+      ],
+      "size": [
+        392.6356991113537,
+        169.65091107263623
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "Set the batch number to match the number of photos in your folder.\n\nNot sure about the speed right now, I'm using a very large language model.  Try using your favorite it should work just fine."
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 10,
+      "type": "BillLoRACaptionNode",
+      "pos": [
+        -575.5995007264539,
+        292.2451150711695
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 13
+        },
+        {
+          "name": "filename",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "filename"
+          },
+          "link": 14
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        },
+        "Node name for S&R": "BillLoRACaptionNode"
+      },
+      "widgets_values": [
+        "bakllava:latest",
+        "man with grey hair and blue eyes",
+        "Bill",
+        "image",
+        "comfyui/output/captions"
+      ]
+    },
+    {
+      "id": 11,
+      "type": "Load Image Batch",
+      "pos": [
+        -1036.6266038052972,
+        38.652462554090846
+      ],
+      "size": [
+        299.708984375,
+        270
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            13
+          ]
+        },
+        {
+          "name": "filename_text",
+          "type": "STRING",
+          "links": [
+            14
+          ]
+        }
+      ],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {}
+        },
+        "Node name for S&R": "Load Image Batch"
+      },
+      "widgets_values": [
+        "incremental_image",
+        0,
+        "randomize",
+        0,
+        "Batch 001",
+        "",
+        "*",
+        "false",
+        "true"
+      ]
+    }
+  ],
+  "links": [
+    [
+      10,
+      10,
+      0,
+      3,
+      0,
+      "STRING"
+    ],
+    [
+      13,
+      11,
+      0,
+      10,
+      0,
+      "IMAGE"
+    ],
+    [
+      14,
+      11,
+      1,
+      10,
+      1,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.7786226405732065,
+      "offset": [
+        1421.172126836634,
+        658.0545421783899
+      ]
+    },
+    "ue_links": [],
+    "links_added_by_ue": [],
+    "frontendVersion": "1.42.11",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
